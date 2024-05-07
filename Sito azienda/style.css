@@ -13,6 +13,20 @@ input{
 }
 .div_saerch{
     margin: 0 auto;
-    width: 550px;
-    
+    width: 600px;
+    height: 75px;
+    border: solid 3px;
+    border-radius:30px ;
+    margin-top: -690px;
+}
+.mainDiv{
+    margin: 0 auto;
+    width: 1400px;
+    height: 700px;
+    border: solid 3px;
+    border-radius:30px ;
+}
+
+.btn-style{
+    background-color: rgb(240, 222, 199);
 }

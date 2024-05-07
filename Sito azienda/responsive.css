@@ -1,0 +1,20 @@
+@media(min-width: 1100px) {
+    .mainDiv{
+        margin: 0 auto;
+        width: 900px;
+        height: 600px;
+        border: solid 3px;
+        border-radius:30px ;
+    }
+    .resp{
+        margin-top: 200px;
+    }
+
+    .div_saerch{
+        width: 300px;
+        height: 60px;
+        margin-bottom: 100px;
+        margin-top: -590px;
+    }
+    
+}
