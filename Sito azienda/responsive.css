@@ -1,20 +1,19 @@
 @media(max-width: 1200px) {
     .mainDiv{
-        margin: 0 auto;
-        width: 900px;
-        height: 600px;
-        border: solid 3px;
-        border-radius:30px ;
+        margin-top: -40px;
     }
     .resp{
         margin-top: 200px;
     }
-
     .div_saerch{
-        width: 300px;
+        width: 400px;
         height: 60px;
         margin-bottom: 100px;
-        margin-top: -590px;
+        margin-top: 40px;
+    }
+    .carosello_immagini{
+        width: 400px;
+        margin-top: 150px;
     }
     
 }
