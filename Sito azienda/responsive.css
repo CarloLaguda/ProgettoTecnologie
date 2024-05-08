@@ -1,4 +1,4 @@
-@media(min-width: 1100px) {
+@media(max-width: 1200px) {
     .mainDiv{
         margin: 0 auto;
         width: 900px;

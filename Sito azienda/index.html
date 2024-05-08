@@ -24,11 +24,11 @@
             </div>
         </nav>
         <div class="mainDiv bg-light mt-4">
-            <div class="list-group ms-3 " style="max-width: 300px; height: 100%;">
+            <div class="list-group ms-3 " style="max-width: 120px; height: 100%;">
                 <label class="mt-5">Aggiungi libro</label>
-                <button type="button" class="list-group-item list-group-item-action mt-1 btn-style" id="aggiungi:libro">+</button>
+                <button type="button" class="list-group-item btn btn-primary mt-1 btn-style" id="aggiungi:libro">+</button>
                 <label class="mt-3">Rimuovi Libro</label>
-                <button type="button" class="list-group-item list-group-item-action mt-1 btn-style" id="rimuovi_libro">Rimuovi</button>
+                <button type="button" class="list-group-item btn btn-primary  mt-1 btn-style" id="rimuovi_libro">Rimuovi</button>
             </div>
             <div class="container bg-dark div_saerch">
                 <div class="input-group mt-2" style="max-width: 600px;">
@@ -43,6 +43,40 @@
                     </div>
                     <button class="btn btn-secondary" type="button" id="btn_cerca">Cerca</button>
                   </div>
+            </div>
+            <div id="carouselExampleCombined" class="carousel slide carosello_immagini container" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active ">
+                            <span class="d-block w-100 bg-danger"></span>
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5>Libro 1</h5>
+                            <p>Desc</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <span class="d-block w-100 bg-success"></span>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Libro 2</h5>
+                            <p>Desc</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <span class="d-block w-100  bg-warning"></span>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Libro 2</h5>
+                            <p>Desc</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCombined" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCombined" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </body>
