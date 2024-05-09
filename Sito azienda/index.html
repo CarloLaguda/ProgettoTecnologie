@@ -1,84 +1,75 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" type="text/css"> 
-    <link rel="stylesheet" href="responsive.css" type="text/css">
-    <title>La Libreria</title>
-</head>
-<body>
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-            <h5 class="text-white h4">Made by the best pigeons of the world :)</h5>
-            <span class="text-muted">Laguda Carlo, Marro Simone, Matta Leonardo & Iljas Toci</span>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" type="text/css"> 
+        <link rel="stylesheet" href="responsive.css" type="text/css">
+        <title>La Libreria</title>
+    </head>
+    <body>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h5 class="text-white h4">Made by the best pigeons of the world :)</h5>
+                <span class="text-muted">Laguda Carlo, Marro Simone, Matta Leonardo & Iljas Toci</span>
+            </div>
         </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <h1 class="text-white text-center">La tua libreria multimediale</h1>
-            <button class="btn text-white me-5"><u>Generi</u></button>
-            <button class="btn text-white me-5"><u>Libri</u></button>
-            <button class="btn text-white me-5"><u>Scaffali</u></button>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-           
-        </div>
-    </nav>
-     <div class="container div_saerch mb-5">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <h1 class="text-white text-center">La tua libreria multimediale</h1>
+                <button class="btn text-white me-5"><a href="generi.html" class="text-white">Generi</a></button>
+                <button class="btn text-white me-5"><a href="libri.html" class="text-white">Libri</a></button>
+                <button class="btn text-white me-5"><a href="scaffali.html" class="text-white">Scaffali</a></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <div class="container div_saerch mb-5">
             <div class=" input-group mt-3" style="max-width: 700px;">
                 <input type="text" class="form-control" placeholder="Recipient's username">
-                <div> 
-                    <select id="tipo_dato" class="form-control">
-                        <option disabled>Opzioni</option>
-                        <option>Genere</option>
-                        <option>Libro</option>
-                        <option>Scaffale</option>
-                    </select>
-                </div>
                 <button class="btn btn-secondary" type="button" id="btn_cerca">Cerca</button>
             </div>
         </div>
-    <div class="mainDiv bg-dark pt-2">
-        <div id="carouselExampleCombined" class="carousel slide carosello_immagini container" data-bs-ride="carousel">
-            <div class="carousel-inner ">
-                <div class="carousel-item active ">
-                    <span class="d-block bg-dark"></span>
-                    <div class="carousel-caption d-none d-md-block text-white">
-                        <h5 class="mb-5">Libro 1</h5>
-                        <p class="mb-5">Desc</p>
+        <div class="mainDiv bg-dark pt-2">
+            <div id="carouselExampleCombined" class="carousel slide carosello_immagini container" data-bs-ride="carousel">
+                <div class="carousel-inner ">
+                    <div class="carousel-item active ">
+                        <span class="d-block bg-primary"></span>
+                        <div class="carousel-caption d-none d-md-block text-white">
+                            <h5 class="mb-5">Libro 1</h5>
+                            <p class="mb-5">Desc</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <span class="d-block bg-danger"></span>
+                        <div class="carousel-caption d-none d-md-block text-white">
+                            <h5 class="mb-5">Libro 2</h5>
+                            <p class="mb-5">Desc</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <span class="d-block bg-warning"></span>
+                        <div class="carousel-caption d-none d-md-block text-white">
+                            <h5 class="mb-5">Libro 3</h5>
+                            <p class="mb-5">Desc</p>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <span class="d-block bg-dark"></span>
-                    <div class="carousel-caption d-none d-md-block text-white">
-                        <h5 class="mb-5">Libro 2</h5>
-                        <p class="mb-5">Desc</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <span class="d-block"></span>
-                    <div class="carousel-caption d-none d-md-block text-white">
-                        <h5 class="mb-5">Libro 3</h5>
-                        <p class="mb-5">Desc</p>
-                    </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCombined" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon custom-carousel-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCombined" data-bs-slide="next">
+                    <span class="carousel-control-next-icon custom-carousel-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCombined" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon custom-carousel-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCombined" data-bs-slide="next">
-                <span class="carousel-control-next-icon custom-carousel-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-    </div>
-    <footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="script.js"></script>
-    </footer>
-</body>
+        <footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            <script src="script.js"></script>
+        </footer>
+    </body>
 </html>

@@ -1,11 +1,12 @@
 //Sr Matta le metto i due codici che ci hanno fornito
-button.addEventListener('click', function(name){
-fetch('https://librarymanagementpw.azurewebsites.net/api/Book')
-.then(response => response.json())
-.then(data => {
-  console.log(data);
-})
-.catch(err => alert("get andata male"));
+const btn_cerca = document.getElementById('btn_cerca')
+btn_cerca.addEventListener('click', function(name){
+	fetch('https://librarymanagementpw.azurewebsites.net/api/Book')
+	.then(response => response.json())
+	.then(data => {
+	console.log(data);
+	})
+	.catch(err => alert("get andata male"));
 })
 
 post = {
@@ -27,7 +28,7 @@ const requestOptions = {
   body: JSON.stringify(post)
 };
 
-button1.addEventListener('click', function(name){
+btn_cerca.addEventListener('click', function(name){
 fetch('https://librarymanagementpw.azurewebsites.net/api/Book', requestOptions)
 .catch(error => {
   console.error(error);
@@ -99,9 +100,9 @@ async function test() {
 	console.log('lista dei generi', generi)
 	// stampo i generi in pagina
 	for (let genere of generi) {
-		const genereEl = document.createElement('div')
+		/*const genereEl = document.createElement('div')
 		genereEl.innerHTML = genere.description
-		document.body.appendChild(genereEl)
+		document.body.appendChild(genereEl)*/
 	}
 	// creo un genere
 	const genereRes = await createGenre({ description: 'test' })
