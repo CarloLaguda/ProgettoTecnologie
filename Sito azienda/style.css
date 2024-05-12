@@ -12,35 +12,31 @@ h1 {
 input {
     width: 300px;
 }
-
+/*div per la barra di ricerca*/
 .div_saerch {
     width: 400px;
     height: 75px;
     margin-top: 50px;
 }
-
+    /*div principale*/
 .mainDiv {
     margin: 0 auto;
     margin-top: -20px;
     width: 100%;
     height: 1000px;
 }
-
-.btn-style {
-    background-color: rgb(240, 222, 199);
-}
-
+/*grandezza span carosello  carolesso*/
 span {
     width: 500px;
     height: 300px;
     margin: 0 auto;
 }
-
+/*grandezze generali carosello*/
 .carosello_immagini {
     max-width: 500px;
     margin-top: 100px;
 }
-
+/*btn per cambaire slide carosello*/
 .custom-carousel-icon {
     color: #000000 !important; /* Sovrascrivi il colore dell'icona */
 }
