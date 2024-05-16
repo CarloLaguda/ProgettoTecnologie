@@ -1,40 +1,80 @@
 body {
-    margin: 0px;
-    padding: 0px;
-}
-h1 {
-    font-size: 39px;
-    text-align: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-input {
-    width: 300px;
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: visible; /* Assicura che il pulsante possa uscire dal contenitore */
 }
-/*div per la barra di ricerca*/
-.div_saerch {
-    width: 400px;
-    height: 75px;
-    margin-top: 50px;
+
+.titolo {
+    width: 50%;
+    height: 100px;
+    margin-left: -20px;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: skewX(-20deg);
+    box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.75);
 }
-    /*div principale*/
-.mainDiv {
-    margin: 0 auto;
-    margin-top: -20px;
-    width: 100%;
-    height: 1000px;
+
+.tit {
+    font-size: 2em;
+    z-index: 2;
+    transform: skewX(20deg);
 }
-/*grandezza span carosello  carolesso*/
-span {
-    width: 500px;
-    height: 300px;
-    margin: 0 auto;
+
+.bottoni {
+    height: 100px;
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0px 7px 6px rgba(218, 218, 218, 0.2);
+    position: relative;
+    flex-grow: 1;
+    margin-left: -25px;
 }
-/*grandezze generali carosello*/
-.carosello_immagini {
-    max-width: 500px;
-    margin-top: 100px;
+.btnsing {
+    margin-left: 10px; /* Aggiunta margine tra i pulsanti */
+    background-color: rgba(240, 248, 255, 0.267);
+    border: none;
+    padding: 10px 20px; /* Aggiunta del padding per rendere i pulsanti cliccabili */
+    text-decoration: none; /* Rimozione del sottolineato dei link */
+    transition: transform 0.3s, box-shadow 0.3s; /* Aggiunta della transizione */
 }
-/*btn per cambaire slide carosello*/
-.custom-carousel-icon {
-    color: #000000 !important; /* Sovrascrivi il colore dell'icona */
+
+.btnsing:hover {
+    transform: scale(1.1); /* Ingrandimento del 10% al passaggio del mouse */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombra intorno al bottone */
+}
+button {
+    border-radius: 50px;
+    padding: 10px 17px;
+    font-size: 1em;
+    cursor: pointer;
+}
+.piccione {
+    position: absolute;
+    right: -50px; /* Metà del pulsante fuori dalla pagina */
+    top: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #ffcc00; /* Colore di sfondo per visibilità */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: right 0.3s ease-in-out; /* Transizione per il movimento */
+    z-index: 2; /* Assicura che il pulsante sia sopra agli altri elementi */
+}
+.piccione:hover {
+    right: 0; 
 }
