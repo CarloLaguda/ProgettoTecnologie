@@ -1,63 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Metadati -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <!-- Collegamenti ai fogli di stile -->
-    <link rel="stylesheet" href="style.css" type="text/css"> 
-    <link rel="stylesheet" href="css/responsive.css" type="text/css">
-    <!-- Titolo della pagina -->
-    <title>La Libreria</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed Top Bar and Carousel</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <div class="titolo">
-            <h1 class="tit">LA TUA LIBRERIA MULTIMEDIALE</h1>
-        </div>
-        <div class="bottoni">
-            <button class="btnsing"><a href="html/libreria.html"></a>-</button> 
-            <button class="btnsing"><a href="html/libreria.html"></a>-</button>
-            <button class="btnsing"><a href="html/libreria.html"></a>-</button>
-        </div>
-        <div>
-            <button class="piccione">Piccioni</button>
-        </div>
+  <div class="top-bar">
+    <div class="left-buttons">
+      <a href="html/libreria.html"><button>Libreria</button></a>
+      <div class="divider"></div>
+      <button>Button 1</button>
+      <button>Button 2</button>
     </div>
-    <div class="upper-div">
-        <div class="black-section">
-            <div class="inner-div">Div 1</div>
-            <div class="inner-div">Div 2</div>
-            <div class="inner-div">Div 3</div>
-        </div>
-        <div class="white-section"></div>
+  </div>
+  <div class="library">
+    <h1>Esplora</h1>
+  </div>
+  <div class="content-below">
+    <div class="content">
+      <div class="title">
+        <h2>Perché dovresti scegliere il nostro sito?</h2>
+      </div>
+      <div class="description">
+        <h3>Vasta selezione di titoli</h3>
+        <p>Offriamo una vasta selezione di libri, dai classici ai bestseller più recenti.</p>
+      </div>
+      <div class="description">
+        <h3>Servizio clienti eccezionale</h3>
+        <p>Il nostro team è disponibile per assisterti in ogni fase del tuo processo di acquisto.</p>
+      </div>
+      <div class="description">
+        <h3>Convenienza</h3>
+        <p>Ottieni i migliori prezzi sul mercato e offerte esclusive per i nostri clienti abituali.</p>
+      </div>
+      <div class="description">
+        <h3>Facile navigazione</h3>
+        <p>Il nostro sito è progettato per offrirti un'esperienza di navigazione intuitiva e senza problemi.</p>
+      </div>
     </div>
-    <div class="carousel">
-        <div class="slide slide1">
-            <div class="overlay"></div>
-        </div>
-        <div class="slide slide2">
-            <div class="overlay"></div>
-        </div>
-        <div class="slide slide3">
-            <div class="overlay"></div>
-        </div>
-    </div>
-
-    <div><!--Perchè noi-->
-        <div><!--Titolo-->
-            <h1>Perch&eacute; dovresti scegliere noi?</h1>
-        </div>
-        <div><!--Motivi-->
-            <p>Siamo sempre in cerca di nuove sfide</p>
-            <p>Team work</p>
-            <p>Conoscenza in materia informatica</p>
-            <p>Realizzazione di molti contenuti multimediali</p>
-        </div>
-    </div>
-    
-    <div><!--La nostra scuola/luogo-->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.1728574543154!2d9.188191376814242!3d45.506598"></iframe>
-    </div>
+    <h1 class="site-title">Il nostro sito</h1>
+  </div>
+  <div class="content-below">
+    <!-- Contenuto della div bianca -->
+  </div>
+  <script src="script.js" type="module"></script>
 </body>
 </html>
