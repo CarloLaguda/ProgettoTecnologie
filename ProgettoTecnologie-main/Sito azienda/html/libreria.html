@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Metadati -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <!-- Collegamenti ai fogli di stile -->
+        <link rel="stylesheet" href="../style.css" type="text/css"> 
+        <link rel="stylesheet" href="../css/responsive.css" type="text/css">
+        <!-- Titolo della pagina -->
+        <title>La Libreria</title>
+    </head>
+    <body>
+        <div><!--MainDiv-->
+            <div><!--TopPart-->
+                <div> <!--Titolo-->
+                    <h1>I tuoi libri, di tutti generi sempre</h1>
+                </div>
+                <div> <!--Bottoni-->
+                    <a href="../home.html"><button>Home</button></a> <!--Libreria-->
+                    <a href="preferiti.html"><button>Preferiti</button></a> <!--Area preferiti-->
+                    <button>Altro</button><!--Da vedere-->
+                </div>
+            </div>
+            <div><!--Esplora e cerca-->
+                <input type="text" id ="input">
+                <select name="select" id="select_criterio">
+                    <option value="Nome">Nome</option>
+                    <option value="Id">Id</option>
+                    <option value="Prezzo">Prezzo</option>
+                    <button>Cerca</button>
+                </select>
+            </div>
+            <div><!--Div Libri--><!--Tutto questo ripetuto per i generi-->
+                <h2>Genere</h1>
+                    <div><!--Bottone per aggiunge libro al genere-->
+                        <button>Modifica genere</button>
+                        <button>Aggiungi libro alla categoria</button>
+                    </div>
+                <div>
+                    <img src="#" alt="immagine con il libro">
+                    <div><!--Scritte-->
+                        <h3>Titolo libro</h3>
+                        <p>Breve desc</p>
+                    </div>
+                    <div><!--Stellina Preferiti-->
+                       <button>stellina</button><!--Cambiabile anche con una img-->
+                    </div>
+                    <div><!--3 bottoni-->
+                        <button>modifica</button>
+                        <button>elimina</button>
+                        <button>segnala</button>
+                    </div>
+                </div>
+            </div>
+            <div></div><!--barra orizzontale-->
+            <div><!--Aggiungi/modifica-->
+                <button>Aggiungi generi</button>
+                <button>Elimina genere</button>
+            </div>
+            <div><!--Crediti-->
+                <h2>Grafica</h2>
+                <h2>Sviluppo Software</h2>
+                <h2>Policy</h2>
+            </div>
+        </div>
+        <footer>
+            <!-- Collegamenti agli script -->
+           <script src="script\libri-generi.js" type="module"></script>
+        </footer>
+    </body>
+</html>
