@@ -8,14 +8,27 @@ const getBooks = async () => {
 }
 
 // crea un libro
-const createBook = async (book) => {
+const createBook = async (title, genre, idNumber) => {
+
+	let post = {
+		"id": 4,
+		"title": title,
+		"price": 24,
+		"isOut": true,
+		"isbn": "asdasdasdasdasd",
+		"genreId": idNumber,
+		"shelfId": 1,
+		"genreName": genre
+	}
+
 	const res = await fetch(`${URL}/api/Book`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(book),
+        body: JSON.stringify(post),
 	})
+
 	return res
 }
 

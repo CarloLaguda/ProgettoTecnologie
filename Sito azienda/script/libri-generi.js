@@ -1,12 +1,14 @@
-import { getBooks, deleteBook, createBook } from "../script.js";
+import { getBooks, deleteBook, createBook, getGenres } from "../script.js";
 
 const libri = document.getElementById("books");
+const selectGenere = document.getElementById("selectGenere") 
+const inputTitle = document.getElementById("title")
+const addBook = document.getElementById("addBook")
 
-async function loadBooks() {
-    let data = await getBooks();
+let idNumber = 0;
 
-    data.forEach(bookData => {
-        const book = document.createElement("div");
+function createDivBook(dataTitle, dataId){
+    const book = document.createElement("div");
         book.classList.add("book")
 
         const img = document.createElement("img")
@@ -16,7 +18,7 @@ async function loadBooks() {
 
         const desc = document.createElement("div");
         const title = document.createElement("h3")
-        title.innerHTML = bookData.title;
+        title.innerHTML = dataTitle;
         desc.appendChild(title)
         const description = document.createElement("p")
         description.innerHTML = "Breve desc"
@@ -37,7 +39,7 @@ async function loadBooks() {
         btnModifica.innerHTML = "modifica"
         buttons.appendChild(btnModifica)
         const btnElimina = document.createElement("button")
-        btnElimina.value = bookData.id
+        btnElimina.value = dataId
         btnElimina.addEventListener("click", function(){
             deleteBook(parseInt(this.value))
             this.parentElement.parentElement.remove()
@@ -51,8 +53,35 @@ async function loadBooks() {
         buttons.appendChild(btnSegnala)
         book.appendChild(buttons)
 
-        libri.appendChild(book); 
+        libri.appendChild(book);
+}
+
+addBook.addEventListener("click", async function(){
+    await createBook(inputTitle.value, selectGenere.options[selectGenere.selectedIndex].text, idNumber)
+
+    createBook(inputTitle.value, idNumber)
+
+    idNumber++
+})
+
+async function loadBooks() {
+    let data = await getBooks();
+
+    data.forEach(bookData => {
+        createDivBook(bookData.title, bookData.id)
     });
 }
 
 loadBooks();
+
+async function loadGenres(){
+    let data = await getGenres()
+
+    data.forEach(dataGenres => {
+        const genre = document.createElement("option")
+        genre.innerHTML = dataGenres.description
+        selectGenere.appendChild(genre)
+    })
+}
+
+loadGenres()
