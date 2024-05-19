@@ -1,0 +1,22 @@
+@media(max-width: 1200px) {
+    .mainDiv{
+        margin-top: -40px;
+    }
+    .resp{
+        margin-top: 200px;
+    }
+    .div_saerch{
+        width: 400px;
+        height: 60px;
+        margin-bottom: 100px;
+        margin-top: 40px;
+    }
+    .carosello_immagini{
+        width: 580px;
+        margin-top: 150px;
+    }
+    span{
+        height: 270px;
+    }
+    
+}
