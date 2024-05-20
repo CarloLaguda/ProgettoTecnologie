@@ -1,49 +1,170 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fixed Top Bar and Carousel</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esplora</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="top-bar">
-    <div class="left-buttons">
-      <a href="html/libreria.html"><button>Libreria</button></a>
-      <div class="divider"></div>
-      <button>Button 1</button>
-      <button>Button 2</button>
+    <header>
+        <div  id="btnNavigaDiv">
+            <a href="#" class="nav-link">HOME</a>
+            <div class="divisore"></div>
+            <a href="html/libreria.html" class="nav-link">LIBRERIA</a>
+            <a href="#" class="nav-link">PREFERITI</a>
+        </div>
+        <div id="btnSettingsDiv">
+            <button class="settings-btn"></button>
+        </div>
+    </header>
+    <div id="mySidebar" class="sidebar">
+        <h3 style="font-size: 30px; font-weight: bold;">Info</h3>
+        <p>Ultimo aggiornamento: </p>
+        <p>Versione: </p>
+        <p>Privacy: </p>
+        <h3 style="font-size: 30px; font-weight: bold;">Segnala</h3>
+        <a style="font-size: 20px;">Bug</a>
+        <a style="font-size: 20px;">Contenuti inappropriati</a>
     </div>
-  </div>
-  <div class="library">
-    <h1>Esplora</h1>
-  </div>
-  <div class="content-below">
-    <div class="content">
-      <div class="title">
-        <h2>Perché dovresti scegliere il nostro sito?</h2>
-      </div>
-      <div class="description">
-        <h3>Vasta selezione di titoli</h3>
-        <p>Offriamo una vasta selezione di libri, dai classici ai bestseller più recenti.</p>
-      </div>
-      <div class="description">
-        <h3>Servizio clienti eccezionale</h3>
-        <p>Il nostro team è disponibile per assisterti in ogni fase del tuo processo di acquisto.</p>
-      </div>
-      <div class="description">
-        <h3>Convenienza</h3>
-        <p>Ottieni i migliori prezzi sul mercato e offerte esclusive per i nostri clienti abituali.</p>
-      </div>
-      <div class="description">
-        <h3>Facile navigazione</h3>
-        <p>Il nostro sito è progettato per offrirti un'esperienza di navigazione intuitiva e senza problemi.</p>
-      </div>
+</div>
+<div class="top">
+    <h1 class="esplora">ESPLORA</h1>
+    <p class="subtitle">Non limitarti al mediocre, scopri le meraviglie che ti aspettano.</p>
+    <a href="#" class="nav-link">VISITA LA NOSTRA LIBRERIA</a>
+</div>
+<div class="cambio-img">
+    <button class="b1" id="b1"></button>
+    <button class="b1" id="b2"></button>
+    <button class="b1" id="b3"></button>
+    <button class="b1" id="b4"></button>
+</div>
+    <section class="intro">
+        <div class="scegliere">
+            <br><br><h1>COSA OFFRIAMO HAI NOSTRI VISITATORI</h1>
+            <div class="divisore-oriz"></div>
+            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</p>
+        </div>
+        <div class="containero">
+            <div class="box" id="box1">
+                <span class="number">1</span>
+                <span class="hidden-text">bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</span>
+            </div>
+            <div class="box" id="box2">
+                <span class="number">2</span>
+                <span class="hidden-text">bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</span>
+            </div>
+            <div class="box" id="box3">
+                <span class="number">3</span>
+                <span class="hidden-text">bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</span>
+            </div>
+            <div class="box" id="box4">
+                <span class="number">4</span>
+                <span class="hidden-text">bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</span>
+            </div>
+        </div>
+    </section>
+    <div class="scopri">
+        <div class="carousel-container">
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <div class="carousel">
+                <a href="result1.html" class="carousel-item" id="item1">
+                    <img src="IMG/rosso.png" alt="Image 1">
+                    <div class="carousel-caption">
+                        <h3>Title 1</h3>
+                        <p>Description for Image 1</p>
+                    </div>
+                </a>
+                <a href="result2.html" class="carousel-item" id="item2">
+                    <img src="IMG/giallo.png" alt="Image 2">
+                    <div class="carousel-caption">
+                        <h3>Title 2</h3>
+                        <p>Description for Image 2</p>
+                    </div>
+                </a>
+                <a href="result3.html" class="carousel-item" id="item3">
+                    <img src="IMG/verde.png" alt="Image 3">
+                    <div class="carousel-caption">
+                        <h3>Title 3</h3>
+                        <p>Description for Image 3</p>
+                    </div>
+                </a>
+                <a href="result4.html" class="carousel-item" id="item4">
+                    <img src="IMG/blu.png" alt="Image 4">
+                    <div class="carousel-caption">
+                        <h3>Title 4</h3>
+                        <p>Description for Image 4</p>
+                    </div>
+                </a>
+                <a href="result5.html" class="carousel-item" id="item5">
+                    <img src="IMG/viola.png" alt="Image 5">
+                    <div class="carousel-caption">
+                        <h3>Title 5</h3>
+                        <p>Description for Image 5</p>
+                    </div>
+                </a>
+            </div>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+        <div class="testo-scroll">
+            <div style="font-size: 20px;">
+                <h2 style="font-size: 50px;">ESPLORA IL NOSTRO CATALOGO</h2><br>
+                <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</p>
+                <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla blabla bla bla bla bla.Bla bla bla bla bla bla bla bla bla</p>
+                <br><br><br><a href="#" class="nav-link">ESPLORE</a>
+            </div>
+        </div>
     </div>
-    <h1 class="site-title">Il nostro sito</h1>
-  </div>
-  <div class="content-below">
-    <!-- Contenuto della div bianca -->
-  </div>
-  <script src="script.js" type="module"></script>
+    <section class="about-us">
+        <div class="chisiamo">
+            <h1>CHI SIAMO</h1>
+            <h3>I PICCIONI PROGRAMMATORI</h3>
+            <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</p>
+            <br><br><br><a href="#" class="nav-link3">CONTATTACI PERCHE SIAMO</a>
+        </div>  
+        <div class="container">
+        </div>
+    </section>
+    <section class="noi">
+        <br><h1>NOI :D</h1>
+        <div class="team">  
+            <div class="matta">
+                <div class="circle yellow"></div>
+                <h1>Nome Nome</h1>
+                <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blaBla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+            </div>
+            <div class="marro">
+                <div class="circle yellow"></div>
+                <h1>Nome Nome</h1>
+                <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blaBla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+            </div>
+            <div class="toci">
+                <div class="circle yellow"></div>
+                <h1>Nome Nome</h1>
+                <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blaBla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla b</p>
+            </div>
+            <div class="carlo">
+                <div class="circle yellow"></div>
+                <h1>Nome Nome</h1>
+                <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blaBla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+            </div>
+        </div>
+    </section>
+    <div class=""></div>
+    <footer>
+        <div id="infoContactUs">
+            <h3>Contattaci</h3>
+            <p>blablablablablablablablablalbal</p>
+        </div>
+        <div id="contactUs">
+            <input type="text" placeholder="email"><br />
+            <input type="text" placeholder="oggetto"><br />
+            <div id="buttonsForm">
+                <button class="btnForm">Invia</button>
+                <button class="btnForm">Cancella bozza</button>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
