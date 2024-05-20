@@ -1,65 +1,39 @@
-const URL = 'https://librarymanagementpw.azurewebsites.net'
+let currentIndex = 0;
+let intervalId;
 
-// lista libri
-const getBooks = async () => {
-	const res = await fetch(`${URL}/api/Book`)
-	const data = await res.json()
-	return data
+function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel-item');
+    const totalSlides = slides.length;
+    if (index >= totalSlides) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = totalSlides - 1;
+    } else {
+        currentIndex = index;
+    }
+    const newTransform = -currentIndex * 100;
+    document.querySelector('.carousel').style.transform = `translateX(${newTransform}%)`;
 }
 
-// crea un libro
-const createBook = async (book) => {
-	const res = await fetch(`${URL}/api/Book`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(book),
-	})
-	return res
+function nextSlide() {
+    showSlide(currentIndex + 1);
 }
 
-// cancella un libro
-const deleteBook = async (id) => {
-	const res = await fetch(`${URL}/api/Book/${id}`, {
-		method: 'DELETE',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-	})
-	return res
+function prevSlide() {
+    showSlide(currentIndex - 1);
 }
 
-// lista generi
-const getGenres = async () => {
-	const res = await fetch(`${URL}/api/Genre`)
-	const data = await res.json()
-	return data
+function startCarousel() {
+    intervalId = setInterval(nextSlide, 9000); // Change image every 10 seconds
 }
 
-// crea un genere
-const createGenre = async (genre) => {
-	const res = await fetch(`${URL}/api/Genre`, {
-	    method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify(genre),
-	})
-    return res
+function stopCarousel() {
+    clearInterval(intervalId);
 }
 
-// cancella un genere
-const deleteGenre = async (id) => {
-	const res = await fetch(`${URL}/api/Genre/${id}`, {
-		method: 'DELETE',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-	})
-	return res
-}
-
-console.log(getBooks())
-
-export {deleteBook, deleteGenre, createGenre, createBook, getGenres, getBooks}
+document.addEventListener('DOMContentLoaded', () => {
+    startCarousel();
+    document.querySelector('.carousel-container').addEventListener('mouseenter', stopCarousel);
+    document.querySelector('.carousel-container').addEventListener('mouseleave', startCarousel);
+    showSlide(currentIndex);
+});
