@@ -26,19 +26,25 @@
             <select id="genreSelect">
                 <option value="" disabled selected>Select Genre</option>
             </select>
-            <button id="searchButton">Search</button>
         </div>
         <div>
-            <h2>Genere</h2>
-            <div>
-                <button>Modifica genere</button>
-                <button id="addBook">Aggiungi libro alla categoria</button>
-                <input type="text" placeholder="Titolo" id="title">
-                <select id="selectGenere">
-                    <option disabled selected>Genere</option>
-                </select>
+            <h2>Libri</h2>
+            <div id="main">
+                <div id="aggiungi">
+                    <div id="element">
+                        <h3>Aggiungi libro</h3>
+                        <div id="inputs">
+                            <input type="text" placeholder="Titolo" id="title">
+                            <select id="selectGenere">
+                                <option disabled selected>Genere</option>
+                            </select>
+                        </div>
+                        <button id="addBook">Aggiungi libro alla categoria</button>
+                    </div>
+                </div>
+                <div id="books">
+                </div>
             </div>
-            <div id="books"></div>
         </div>
         <div></div>
         <div>

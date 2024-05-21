@@ -29,4 +29,62 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 70%;
+}
+
+#aggiungi{
+    width: 30%;
+}
+
+#main{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#element{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#inputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#title{
+    margin: 20px;
+    height: 30px;
+    width: 200px;
+}
+
+#element h3{
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#addBook{
+    margin-left: 20px;
+    height: 30px;
+    width: 208px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: rgb(255, 149, 0);
+    color: black;
+    border: 1px solid rgb(255, 149, 0);
+    transition-duration: 0.3s;
+}
+
+#addBook:hover{
+    background-color: transparent;
+}
+
+#selectGenere{
+    height: 36px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

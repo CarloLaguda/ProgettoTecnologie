@@ -21,7 +21,6 @@ priceRange.addEventListener("input", function() {
 genreSelect.addEventListener("change", filterBooks);
 selectGenere.addEventListener("change", updateAddBook);
 
-searchButton.addEventListener("click", filterBooks);
 addBook.addEventListener("click", addNewBook);
 
 async function initialize() {
