@@ -63,6 +63,3 @@ const deleteGenre = async (id) => {
 }
 
 export { deleteBook, deleteGenre, createGenre, createBook, getGenres, getBooks }
-
-
-

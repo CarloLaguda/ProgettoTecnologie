@@ -155,6 +155,11 @@ function createDivBook(dataTitle, dataId) {
     btnModifica.classList.add("btn");
     btnModifica.textContent = "Edit";
     buttons.appendChild(btnModifica);
+    // Inside createDivBook function
+    btnModifica.addEventListener("click", function() {
+        openEditModal(dataId, dataTitle);
+    });
+
     const btnElimina = document.createElement("button");
     btnElimina.value = dataId;
     btnElimina.addEventListener("click", async function() {
@@ -178,3 +183,29 @@ function createDivBook(dataTitle, dataId) {
 }
 
 initialize();
+
+function openEditModal(bookId, currentTitle) {
+    // Populate modal with current book details
+    const modalTitleInput = document.getElementById("modalTitle");
+    modalTitleInput.value = currentTitle;
+
+    // Set up event listener for save button
+    const saveButton = document.getElementById("saveButton");
+    saveButton.onclick = function() {
+        const newName = modalTitleInput.value;
+        const newDescription = document.getElementById("modalDescription").value;
+        const newGenreId = document.getElementById("modalGenre").value;
+
+        updateBookDetails(bookId, newName, newDescription, newGenreId);
+        closeModal();
+    }
+
+    // Show modal
+    const modal = document.getElementById("editModal");
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    const modal = document.getElementById("editModal");
+    modal.style.display = "none";
+}

@@ -12,7 +12,6 @@
             <a href="#" class="nav-link">HOME</a>
             <div class="divisore"></div>
             <a href="html/libreria.html" class="nav-link">LIBRERIA</a>
-            <a href="#" class="nav-link">PREFERITI</a>
         </div>
         <div id="btnSettingsDiv">
             <button class="settings-btn"></button>
@@ -24,8 +23,8 @@
         <p>Versione: </p>
         <p>Privacy: </p>
         <h3 style="font-size: 30px; font-weight: bold;">Segnala</h3>
-        <a style="font-size: 20px;">Bug</a>
-        <a style="font-size: 20px;">Contenuti inappropriati</a>
+        <a href="#footer" style="font-size: 20px;" class="scroll-to-bottom">Bug</a>
+        <a href="#footer" style="font-size: 20px;" class="scroll-to-bottom">Contenuti inappropriati</a>
     </div>
 </div>
 <div class="top">
@@ -93,7 +92,7 @@
                 <h2 style="font-size: 50px;">I PREFERITI DEI DEVELOPER</h2><br>
                 <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</p>
                 <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla blabla bla bla bla bla.Bla bla bla bla bla bla bla bla bla</p>
-                <br><br><br><a href="#" class="nav-link">I DEVELOPER?</a>
+                <br><br><br><a href="#about" class="nav-link" id="btnDeveloper">I DEVELOPER?</a>
             </div>
         </div>
     </div>
@@ -102,7 +101,7 @@
             <div class="titolo-minilib">
                 <h1>ESPLORA IL NOSTRO CATALOGO</h1>
                 <p>Una breve descrizione del nostro fantastico catalogo di libriaaaa aaaaaaaaaaa aaaa aaaaaaa aaaaaa aaaaaaa aaaaaaaaaaaaaaa aaaaaaaa aaaaaaaaaaa aaaaaaaaaa aaaaa aaaaaaaaaaaaaaaaa aaaaaaaa aaaaaa aaaaaaaaa aaaa.</p>
-                <a href="#" class="explore-link">Esplora</a>
+                <a href="html/libreria.html" class="explore-link">Esplora</a>
             </div>
         </div>
         <div class="right-side">
@@ -110,7 +109,7 @@
             </div>
         </div>
     </section>
-    <section class="about-us">
+    <section class="about-us" id="about">
         <div class="team">
             <div class="member">
                 <div class="image-container" id="member1">
@@ -153,24 +152,30 @@
             <h1>CHI SIAMO</h1>
             <h3>I PICCIONI PROGRAMMATORI</h3>
             <p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.</p>
-            <br><br><br><a href="#" class="nav-link3">CONTATTACI PERCHE SIAMO</a>
+            <a id="tizzi">TIZZI</a>
         </div>
     </section>
 
-    <footer>
+    <footer id="footer">
         <div id="infoContactUs">
-            <h3>Contattaci</h3>
-            <p>blablablablablablablablablalbal</p>
+            <h1>Contattaci</h1>
+            <p>blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal</p>
+            <br>
+            <h2>Riferiteci errori che potete riscontrare</h2>
+            <p>blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal blablablablablablablablablalbal</p>
         </div>
         <div id="contactUs">
-            <input type="text" placeholder="email"><br />
-            <input type="text" placeholder="oggetto"><br />
+            <input type="email" placeholder="email" id="mailValue"><br />
+            <input type="text" placeholder="oggetto" id="oggettoValue"><br />
+            <input class="input3" type="text" placeholder="dettagli" id="dettagliValue"><br />
             <div id="buttonsForm">
                 <button class="btnForm">Invia</button>
                 <button class="btnForm">Cancella bozza</button>
             </div>
         </div>
     </footer>
+    <center style="background-color: #1d1d1d; color: aliceblue;">@Cipirigt 2024 piccioni programmatori</center>
     <script src="home.js" type="module"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 </html>
