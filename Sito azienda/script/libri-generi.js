@@ -1,4 +1,4 @@
-import { getBooks, deleteBook, createBook, getGenres } from "../script.js";
+import { getBooks, deleteBook, createBook, getGenres, updateData } from "../script.js";
 
 const libri = document.getElementById("books");
 const searchInput = document.getElementById("searchInput");
@@ -12,6 +12,7 @@ const inputTitle = document.getElementById("title");
 
 let allBooks = [];
 let idNumber = 0;
+let genres = [];
 
 searchInput.addEventListener("input", filterBooks);
 priceRange.addEventListener("input", function() {
@@ -30,6 +31,7 @@ async function initialize() {
 async function loadBooks() {
     try {
         allBooks = await getBooks();
+        console.log('Loaded books:', allBooks.map(book => book.id)); // Log all book IDs
         displayBooks(allBooks);
     } catch (error) {
         console.error('Failed to load books:', error);
@@ -38,7 +40,7 @@ async function loadBooks() {
 
 async function loadGenres() {
     try {
-        const genres = await getGenres();
+        genres = await getGenres();
         genreSelect.innerHTML = '<option value="" disabled selected>Select Genre</option>';
         selectGenere.innerHTML = '<option value="" disabled selected>Select Genre</option>';
         genres.forEach(genre => {
@@ -155,7 +157,6 @@ function createDivBook(dataTitle, dataId) {
     btnModifica.classList.add("btn");
     btnModifica.textContent = "Edit";
     buttons.appendChild(btnModifica);
-    // Inside createDivBook function
     btnModifica.addEventListener("click", function() {
         openEditModal(dataId, dataTitle);
     });
@@ -184,28 +185,76 @@ function createDivBook(dataTitle, dataId) {
 
 initialize();
 
-function openEditModal(bookId, currentTitle) {
-    // Populate modal with current book details
+function openEditModal(id, currentTitle, currentDescription, currentGenreId) {
     const modalTitleInput = document.getElementById("modalTitle");
     modalTitleInput.value = currentTitle;
 
-    // Set up event listener for save button
+    const modalDescriptionInput = document.getElementById("modalDescription");
+    modalDescriptionInput.value = currentDescription;
+
+    const modalGenreSelect = document.getElementById("modalGenre");
+    modalGenreSelect.innerHTML = '<option value="" disabled>Select Genre</option>';
+    genres.forEach(genre => {
+        const option = document.createElement("option");
+        option.value = genre.genreId;
+        option.textContent = genre.description;
+        if (genre.genreId === currentGenreId) {
+            option.selected = true;
+        }
+        modalGenreSelect.appendChild(option);
+    });
+
     const saveButton = document.getElementById("saveButton");
-    saveButton.onclick = function() {
-        const newName = modalTitleInput.value;
-        const newDescription = document.getElementById("modalDescription").value;
-        const newGenreId = document.getElementById("modalGenre").value;
+    saveButton.onclick = async function() {
+        const newName = modalTitleInput.value.trim();
+        const newDescription = modalDescriptionInput.value.trim();
+        const newGenreId = parseInt(modalGenreSelect.value);
 
-        updateBookDetails(bookId, newName, newDescription, newGenreId);
-        closeModal();
-    }
+        if (!newName || !newDescription || isNaN(newGenreId)) {
+            alert('Please fill in all fields correctly.');
+            return;
+        }
 
-    // Show modal
+        const updatedData = {
+            title: newName,
+            description: newDescription,
+            genreId: newGenreId
+        };
+
+        try {
+            await updateBook(id, updatedData);
+            closeModal();
+        } catch (error) {
+            console.error('Error updating book:', error);
+        }
+    };
+
     const modal = document.getElementById("editModal");
     modal.style.display = "block";
 }
 
-function closeModal() {
-    const modal = document.getElementById("editModal");
-    modal.style.display = "none";
+const URL = 'https://librarymanagementpw.azurewebsites.net';
+
+async function updateBook(id, updatedData) {
+    const url = `${URL}/api/Book/${id}`;
+    
+    try {
+        console.log(`Updating book with ID: ${id}`);
+        console.log(`PUT URL: ${url}`);
+        console.log('Data being sent:', updatedData);
+
+        const response = await updateData({ ...updatedData, id }); // Add the ID to the updated data
+        
+        if (!response.ok) {
+            const errorDetails = await response.json().catch(() => ({}));
+            console.error('Failed to update the book:', response.status, errorDetails);
+            throw new Error(`Failed to update the book: ${response.statusText}`);
+        }
+
+        console.log('Book updated successfully');
+        await loadBooks();
+    } catch (error) {
+        console.error('Error updating book:', error);
+        throw error;
+    }
 }

@@ -51,6 +51,17 @@ const createGenre = async (genre) => {
     return res;
 }
 
+const updateData = async (put) => {
+    const res = await fetch(`${URL}/api/Book`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(put),
+    })
+    return res;
+}
+
 // cancella un genere
 const deleteGenre = async (id) => {
     const res = await fetch(`${URL}/api/Genre/${id}`, {
@@ -62,4 +73,4 @@ const deleteGenre = async (id) => {
     return res;
 }
 
-export { deleteBook, deleteGenre, createGenre, createBook, getGenres, getBooks }
+export { deleteBook, deleteGenre, createGenre, createBook, getGenres, getBooks, updateData }
