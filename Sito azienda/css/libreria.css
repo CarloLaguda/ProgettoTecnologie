@@ -1,0 +1,204 @@
+.book{
+    border: 1px solid lightgrey;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+}
+
+.stella{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.buttons{
+    display: flex;
+    width: 100%;
+}
+
+.btn{
+    flex-grow: 1;
+}
+
+#books{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+#aggiungi{
+    width: 30%;
+}
+
+#main{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#element{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#inputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#title{
+    margin: 20px;
+    height: 30px;
+    width: 200px;
+}
+
+#element h3{
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#addBook{
+    margin-left: 20px;
+    height: 30px;
+    width: 208px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: rgb(255, 149, 0);
+    color: black;
+    border: 1px solid rgb(255, 149, 0);
+    transition-duration: 0.3s;
+}
+
+#addBook:hover{
+    background-color: transparent;
+}
+
+#selectGenere{
+    height: 36px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}     
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#libriPreferiti{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.preferito{
+    width: 200px;/*i hate niggers and jews and gypsy and gays*/
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    border: 1px solid lightgrey;
+    margin: 20px;
+}
+
+#generi{
+    display: flex;
+    flex-direction: column;
+}
+
+.genere{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.bookGenre{
+    margin: 30px;
+    width: 150px;
+    aspect-ratio: 1 / 1;
+    border-radius: 30px;
+    border: 1px solid lightgray;
+}
+
+#searchInputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#searchInputs #searchInput{
+    margin: 30px;
+    width: 300px;
+    aspect-ratio: 8 / 1;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid lightgrey;
+}
+
+#price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#price p{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 8px;
+}
+
+#price span{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px;
+}
+
+#searchInputs select{
+    margin: 20px;
+    height: 50px;
+    aspect-ratio: 3 / 1;
+}
+
+
+
