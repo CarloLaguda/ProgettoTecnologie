@@ -29,6 +29,20 @@ document.addEventListener("DOMContentLoaded", function () {
     loadCatalogo()
 });
 
+const linkLaguda = document.getElementById('ToScocialCarlo')
+const imgLaguda = document.getElementById('Image_Carlo')
+
+imgLaguda.addEventListener('mouseover', function() {
+    imgLaguda.src = "IMG/carlox.png"
+    linkLaguda.href = 'https://www.instagram.com/carlo_laguda/'
+});
+
+// Ripristina l'immagine originale quando il mouse lascia l'immagine
+imgLaguda.addEventListener('mouseout', function() {
+    imgLaguda.src = "IMG/carlox.png"
+    linkLaguda.href = 'https://www.instagram.com/carlo_laguda/'
+});
+
 function changeBackgroundImage(imageUrl) {
     const topSection = document.querySelector(".top");
     topSection.style.transition = "background-image 0.9s ease-in-out";

@@ -54,7 +54,7 @@ header {
   height: 50px;
   float: left;
 }
-.nav-link {
+  .nav-link {
   margin-right: 15px;
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -245,7 +245,8 @@ header {
 }
 
 footer {
-  background-color: #1d1d1d;
+background-color: #222222;
+  background-size: cover;
   color: white;
   padding: 40px 20px;
   display: flex;
@@ -260,16 +261,21 @@ footer {
   flex-grow: 5;
   width: 20%;
   margin-left: 5%;
+  margin-right: 5%;
   font-size: 20px;
 }
-
-#contactUs{
-  margin-left: 15%;
-  flex-grow: 6;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+#contactUs{ 
+  margin-left: -100px;
 }
+
+#contactUs button {
+  height: 60px;
+  font-size: 24px;
+  font-weight: bold;
+  aspect-ratio: 2 / 1;
+  transition-duration: 0.3s;
+}
+
 
 input{
   height: 50px;
@@ -303,6 +309,44 @@ input{
 #buttonsForm{
   display: flex;
   flex-direction: row;
+}
+.social-icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Rendi il pulsante rotondo */
+  overflow: hidden; /* Assicura che l'immagine all'interno del pulsante non esca dai bordi rotondi */
+  margin-right: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiungi un'ombra sottile */
+  transition-duration: 0.6s;
+}
+
+.social-icon:hover {
+  box-shadow: 0 8px 16px rgba(249, 249, 249, 0.2); /* Aumenta l'ombra al passaggio del mouse */
+}
+
+#btn_invia {
+  color: white;
+  background-color: #ff000000; /* Rosso */
+  border: none;
+  margin-right: 10px;
+  border: 1px solid white; /* Bordo bianco */
+}
+
+#btn_invia:hover {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.793); /* Ombra rossa al passaggio del mouse */
+}
+.opacity{
+  opacity: 0.7;
+}
+#Cancella_bozza {
+  color: #FFFFFF; /* Bianco */
+  background-color: orangered;
+  border: none;
+}
+
+#Cancella_bozza:hover {
+  box-shadow: 0 4px 8px rgba(255, 68, 0, 0.36) /* Ombra bianca al passaggio del mouse */
 }
 
 .testo-scroll {
@@ -477,7 +521,7 @@ input{
   width: 100%;
   clip-path: polygon(0 15%, 100% 10%, 100% 100% , 0% 100%);
   align-items: center;
-  margin-top: -190px;
+  margin-top: -205px;
   background-color: #ffffff;
 }
 
@@ -735,6 +779,11 @@ main {
     border-radius: 0.25rem;
     padding: 0.75rem;
     cursor: pointer;
+    transition: all 0.7s ease;
+  }
+  & button:hover{
+    color: rgb(0, 0, 0);
+    background-color: #f5f5f5;
   }
 }
 
