@@ -5,83 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/libreria.css" type="text/css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <title>La Libreria</title>
 </head>
 <body>
+    <header>
+        <div id="btnNavigaDiv">
+            <a href="../home.html" class="nav-link">HOME</a>
+        </div>
+        <div id="btnSettingsDiv">
+            <button class="settings-btn"></button>
+        </div>
+    </header>
+    <div id="mySidebar" class="sidebar">
+        <h3 style="font-size: 30px; font-weight: bold;">Info</h3>
+        <p>Ultimo aggiornamento: 22/05/24 </p>
+        <p>Versione: 1.3.6</p>
+        <p>Privacy: i valori di questa compagnia non prevedono alcun riguardo per la salvaguardia delle tue informazioni personali.</p>
+        <h3 style="font-size: 30px; font-weight: bold;">Segnala</h3>
+        <a href="#footer" style="font-size: 20px;" class="scroll-to-bottom">Bug</a>
+        <a href="#footer" style="font-size: 20px;" class="scroll-to-bottom">Contenuti inappropriati</a>
+    </div>
     <div>
-        <div>
-            <div>
-                <h1>I tuoi libri, di tutti generi sempre</h1>
-            </div>
-            <div>
-                <a href="../home.html"><button>Home</button></a>
-                <button>Altro</button>
-            </div>
-        </div>
         <div id="searchInputs">
-            <input type="text" id="searchInput" placeholder="Search for books...">
-            <div id="price">
-                <p>Price: </p>
-                <input type="range" id="priceRange" min="0" max="100" value="100">
-                <span id="priceValue">100</span>
+            <h1>CERCA NEL NOSTRO CATALOGO</h1>
+            <div class="rotondi">
+                <input type="text" id="searchInput" placeholder=" Search for books...">
+                <a href="#aggiungi"><button class="aggiungi" id="aggi">+</button></a>
             </div>
-            <select id="genreSelect">
-                <option value="" disabled selected>Select Genre</option>
-            </select>
-        </div>
-        <div>
-            <h2>Libri</h2>
-            <div id="main">
-                <div id="aggiungi">
-                    <div id="element">
-                        <h3>Aggiungi libro</h3>
-                        <div id="inputs">
-                            <input type="text" placeholder="Titolo" id="title">
-                            <select id="selectGenere">
-                                <option disabled selected>Genere</option>
-                            </select>
-                        </div>
-                        <input type="text" placeholder="Prezzo, uando il punto" id="prezzo">
-                        <button id="addBook">Aggiungi libro alla categoria</button>
-                    </div>
+            
+            <div class="migiranlepalle">
+                <div id="price">
+                    <p>Price: </p>
+                    <input type="range" id="priceRange" min="0" max="100" value="100">
+                    <span id="priceValue">100</span>
                 </div>
+                <select id="genreSelect" class="este">
+                    <option value="" disabled selected>GENERE</option>
+                    <option>Tutti</option>
+                </select>
+                
+            </div>
+            <button id="revealSearch">---------<br>-----<br>--
+            </button>
+        </div>
+        <div class = "LibriShow">
+            <h2 class="titolo">DI UN OCCHIATA AL CATALOGO</h2>
+            <div id="main">
                 <div id="books">
                 </div>
             </div>
+            <button id="reduceBooks">Riduci</button>
         </div>
-        <div id="preferiti">
-            <h2>I tuoi preferiti</h2>
-            <div id="libriPreferiti">
-
+        <div id = "general">
+            <div id="preferiti">
+                <h2>I tuoi preferiti</h2>
+                <div id="libriPreferiti">
+                </div>
+            </div>
+            <div id="generi">
             </div>
         </div>
-        <div id="generi">
-            
-        </div>
-        <div>
-            <h2>Grafica</h2>
-            <h2>Sviluppo Software</h2>
-            <h2>Policy</h2>
+        <div class="aggiunta">
+            <div id="aggiungi">
+                <div id="element">
+                    <h3 class="color-white">Aggiungi libro</h3>
+                    <div id="inputs">
+                        <input type="text" placeholder="Titolo" id="title">
+                        <select id="selectGenere">
+                            <option>Tutti i Genere</option>
+                        </select>
+                    </div>
+                    <div id="sRow">
+                        <input type="text" placeholder="Prezzo, uando il punto" id="priceAdd">
+                        <button id="addBook">Aggiungi libro</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
        <script src="../script/libri-generi.js" type="module"></script>
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     </footer>
-
-    <div id="editModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Edit Book</h2>
-            <label for="modalTitle">Title:</label>
-            <input type="text" id="modalTitle">
-            <label for="modalDescription">Description:</label>
-            <textarea id="modalDescription"></textarea>
-            <label for="modalGenre">Genre:</label>
-            <select id="modalGenre">
-                <!-- Populate this select with genres dynamically if needed -->
-            </select>
-            <button id="saveButton">Save</button>
-        </div>
-    </div>
 </body>
 </html>

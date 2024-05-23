@@ -9,6 +9,38 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.scritta_arancione {
+  color: rgb(255, 128, 0);
+  height: 25px;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: -45px;
+  margin-top: -20px;
+}
+
+.scritta_arancione::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background-color: orange;
+  transition: width 0.9s ease, left 0.9s ease;
+}
+
+.scritta_arancione:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.piccione{
+  opacity: 0;
+  margin-top: -100px;
+  width: 40px;
+}
+
 header {
   text-align: center;
   position: relative;
@@ -280,21 +312,20 @@ background-color: #222222;
 input{
   height: 50px;
   width: 700px;
-  font-size: 30px;
+  font-size: 20px;
   border-radius: 0px;
   border: 1px solid transparent;
 }
 .input3{
   height: 150px;
   width: 700px;
-  font-size: 23px;
+  font-size: 20px;
   text-align: start;
   border: 1px solid transparent;
 }
 .btnForm{
   height: 60px;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 20px;
   aspect-ratio: 2 / 1;
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
@@ -310,7 +341,7 @@ input{
   display: flex;
   flex-direction: row;
 }
-.social-icon {
+#social-icon-spot, #social-icon-git, #social-icon-dis {
   display: inline-block;
   width: 50px;
   height: 50px;
@@ -321,8 +352,16 @@ input{
   transition-duration: 0.6s;
 }
 
-.social-icon:hover {
-  box-shadow: 0 8px 16px rgba(249, 249, 249, 0.2); /* Aumenta l'ombra al passaggio del mouse */
+#social-icon-spot:hover {
+  box-shadow: 0px 0px 15px rgb(8, 208, 41); /* Aumenta l'ombra al passaggio del mouse */
+}
+
+#social-icon-git:hover {
+  box-shadow:  0px 0px 15px rgb(0, 0, 0); /* Aumenta l'ombra al passaggio del mouse */
+}
+
+#social-icon-dis:hover {
+  box-shadow: 0px 0px 15px #738ADB; /* Aumenta l'ombra al passaggio del mouse */
 }
 
 #btn_invia {
@@ -501,10 +540,6 @@ input{
   padding-left: 20px;
   width: 300px;
 }
-
-
-
-
 .carousel-transition {
   transition: transform 0.5s ease;
 }
@@ -685,17 +720,25 @@ input{
   background-color: #f1f1f100;
   margin-left: 150px;/* Adjust margin as needed */
 }
-#tizzi{
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  color: burlywood;
-}
-.tizzi:hover {
-  color: chocolate;
-  width: 53px;
-  height: 53px;
+
+#tizi{
+  padding-top: 5px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  border-radius: 2px;
+  font-size: 20px;
+  color: rgb(255, 128, 0);;
+  background-color: transparent;
   cursor: pointer;
+  transition-duration: 0.7s;
+  border: none;
+  margin-left: -9px;
+  border: 1px solid transparent;
+}
+
+#tizi:hover {
+  color: chocolate;
+  border-bottom: 1px solid chocolate;
 }
 
 .scopri {

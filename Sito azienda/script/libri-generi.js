@@ -1,9 +1,21 @@
-import { getBooks, deleteBook, createBook, getGenres, updateData } from "../script.js";
+import { getBooks, deleteBook,deleteGenre, createBook, getGenres, updateData } from "../script.js";
 
+/*const getImages = async (name) => {
+    const res = await fetch(`https://serpapi.com/search.json?q=${name}&engine=google_images&ijn=0`)
+    const images = await res.json()
+    console.log(images)
+    return images
+}*/
+
+let x = 0;
+
+const main = document.getElementById("main")
 const libri = document.getElementById("books");
 const searchInput = document.getElementById("searchInput");
 const priceRange = document.getElementById("priceRange");
 const priceValue = document.getElementById("priceValue");
+priceValue.innerHTML = await findMaxPrice()
+priceRange.max = await findMaxPrice()
 const genreSelect = document.getElementById("genreSelect");
 const selectGenere = document.getElementById("selectGenere");
 const searchButton = document.getElementById("searchButton");
@@ -11,6 +23,24 @@ const addBook = document.getElementById("addBook");
 const inputTitle = document.getElementById("title");
 const preferitiDiv = document.getElementById("libriPreferiti")
 const generi = document.getElementById("generi")
+const priceAdd = document.getElementById("priceAdd")
+const revealSearch = document.getElementById("revealSearch")
+const divSearch = document.getElementsByClassName("migiranlepalle")[0]
+revealSearch.addEventListener("click", function(){
+    divSearch.classList.toggle("migiranlepalle")
+    divSearch.classList.toggle("revealed")
+})
+const reduceBooks = document.getElementById("reduceBooks")
+reduceBooks.addEventListener("click", function(){
+    main.classList.toggle("closed")
+    if(this.innerHTML == "Riduci"){
+        this.innerHTML = "Espandi"
+    }else{
+        this.innerHTML = "Riduci"
+    }
+})
+
+const SERPAPI_API_KEY = 'bc1fcd8829fe1b5f0eb4f04be00cb97d78e095083a517334a103ce4b06b0abf5';
 
 let allBooks = [];
 let idNumber = 0;
@@ -45,7 +75,7 @@ async function loadBooks() {
 async function loadGenres() {
     try {
         genres = await getGenres();
-        genreSelect.innerHTML = '<option value="" disabled selected>Select Genre</option>';
+        genreSelect.innerHTML = '<option value="" disabled selected>Select Genre</option><option>Tutti</option>';
         selectGenere.innerHTML = '<option value="" disabled selected>Select Genre</option>';
         genres.forEach(genre => {
             const option1 = document.createElement("option");
@@ -67,45 +97,6 @@ function updateAddBook() {
     inputTitle.disabled = selectedGenre.value === "";
 }
 
-async function addNewBook() {
-    const selectedGenre = selectGenere.options[selectGenere.selectedIndex];
-    const selectedValue = selectedGenre.value;
-    const titleValue = inputTitle.value.trim();
-
-    if (selectedValue === "") {
-        alert("Please select a genre for the book.");
-        return;
-    }
-//#region 
-    if (titleValue === "") {
-        alert("The title of the book cannot be empty.");
-        return;
-    }else if(titleValue === "Tizi"){
-        alert("CUPARDO GAY!!!!!!!!")
-    }
-//#endregion
-
-    const post = {
-        id: idNumber,
-        title: titleValue,
-        price: 24,
-        isOut: true,
-        isbn: "asdasdasdasdasd",
-        genreId: selectedValue,
-        shelfId: 1,
-        genreName: "string"
-    };
-
-    try {
-        await createBook(post);
-        await loadBooks();
-        findGeneri()
-        idNumber++;
-        inputTitle.value = "";
-    } catch (error) {
-        console.error('Failed to create the book:', error);
-    }
-}
 
 function filterBooks() {
     const searchQuery = searchInput.value.toLowerCase();
@@ -114,8 +105,10 @@ function filterBooks() {
 
     let filteredBooks = allBooks;
 
-    if (selectedGenre !== "") {
+    if (selectedGenre !== "Tutti" && selectedGenre !== "") {
         filteredBooks = filteredBooks.filter(book => book.genreId === parseInt(selectedGenre));
+    }else{
+        filteredBooks = allBooks
     }
 
     filteredBooks = filteredBooks.filter(book => book.price <= maxPrice);
@@ -124,34 +117,29 @@ function filterBooks() {
         filteredBooks = filteredBooks.filter(book => book.title.toLowerCase().includes(searchQuery));
     }
 
-    displayBooks(filteredBooks);
+     displayBooks(filteredBooks);
 }
 
 function displayBooks(books) {
     libri.innerHTML = "";
     books.forEach(bookData => {
-        createDivBook(bookData.title, bookData.id);
+        createDivBook(bookData.title, bookData.id, bookData.price);
     });
 }
 
-function createDivBook(dataTitle, dataId) {
+
+function createDivBook(dataTitle, dataId, dataPrice) {
     const book = document.createElement("div");
     book.classList.add("book");
-
-    const img = document.createElement("img");
-    img.src = "#";
-    img.alt = "Book image";
-    book.appendChild(img);
-
     const desc = document.createElement("div");
     const title = document.createElement("h3");
     title.textContent = dataTitle;
     desc.appendChild(title);
-    const description = document.createElement("p");
-    description.textContent = "Brief description";
-    desc.appendChild(description);
+    const price = document.createElement("p");
+    price.textContent = "Price: " + dataPrice + "€";
+    desc.appendChild(price)
     book.appendChild(desc);
-
+    desc.classList.add('scritte-Libro')
     const stella = document.createElement("div");
     stella.classList.add("stella");
     const btnStella = document.createElement("button");
@@ -161,15 +149,14 @@ function createDivBook(dataTitle, dataId) {
             alert("Il libro è già nei preferiti")
         }else{
             addFavourite(this.value)
+            btnStella.style.backgroundColor = "Gold"
         }
     })
-    btnStella.textContent = "Favorite";
     stella.appendChild(btnStella);
+    btnStella.classList.add("star-button")
     book.appendChild(stella);
-
     const buttons = document.createElement("div");
     buttons.classList.add("buttons");
-
     const btnElimina = document.createElement("button");
     btnElimina.value = dataId;
     btnElimina.addEventListener("click", async function() {
@@ -181,12 +168,15 @@ function createDivBook(dataTitle, dataId) {
             console.error('Failed to delete the book:', error);
         }
     });
+
+    const imgElimina = document.createElement("img")
+    const imgSegnala = document.createElement("img")
     btnElimina.classList.add("btn");
-    btnElimina.textContent = "Delete";
     buttons.appendChild(btnElimina);
     const btnSegnala = document.createElement("button");
+    btnElimina.appendChild(imgElimina)
+    btnSegnala.appendChild(imgSegnala)
     btnSegnala.classList.add("btn");
-    btnSegnala.textContent = "Report";
     btnSegnala.addEventListener('click', function(){
         emailjs.init('dkVykgsHdumN4cCws');
         const params = {
@@ -206,19 +196,14 @@ function createDivBook(dataTitle, dataId) {
     })
     buttons.appendChild(btnSegnala);
     book.appendChild(buttons);
-
     libri.appendChild(book);
 }
-
 initialize();
-
 function openEditModal(id, currentTitle, currentDescription, currentGenreId) {
     const modalTitleInput = document.getElementById("modalTitle");
     modalTitleInput.value = currentTitle;
-
     const modalDescriptionInput = document.getElementById("modalDescription");
     modalDescriptionInput.value = currentDescription;
-
     const modalGenreSelect = document.getElementById("modalGenre");
     modalGenreSelect.innerHTML = '<option value="" disabled>Select Genre</option>';
     genres.forEach(genre => {
@@ -229,8 +214,8 @@ function openEditModal(id, currentTitle, currentDescription, currentGenreId) {
             option.selected = true;
         }
         modalGenreSelect.appendChild(option);
+        
     });
-
     const saveButton = document.getElementById("saveButton");
     saveButton.onclick = async function() {
         const newName = modalTitleInput.value.trim();
@@ -288,9 +273,7 @@ async function updateBook(id, updatedData) {
 
 const loadFavourites =  async () => {
     let libri = await getBooks()
-
     preferitiDiv.innerHTML = ""
-
     for(let i = 0; i < favourites.length; i++){
         libri.forEach(book => {
             if(favourites[i] == parseInt(book.id)){
@@ -339,60 +322,165 @@ function checkIfAlreadyFav(id){
 }
 
 const findGeneri = async () => {
-    generi.innerHTML = ""
-
-    let books = await getBooks()
-
+    generi.innerHTML = "";
+    let books = await getBooks();
+    let findGenres = [];
+    
     books.forEach(libro => {
-        if(findGenres.length == 0){
-            findGenres.push(libro.genreName)
-        }else{
-            if(checkIfAlreadyGenre(libro.genreName)){
-                console.log("")
-            }else{
-                findGenres.push(libro.genreName)
-            }
+        if (!findGenres.includes(libro.genreName)) {
+            findGenres.push(libro.genreName);
         }
-    })
+    });
+    
+    console.log(findGenres);
+    await displayGenres(findGenres);
+};
 
-    console.log(findGenres)
-    displayGenres(findGenres)
+async function displayGenres(findGenres) {
+    let books = await getBooks();
+    findGenres.forEach(genre => {
+        console.log(genre);
+        
+        const newGenre = document.createElement("div");
+        newGenre.classList.add("genre");
+        
+        const titleGenre = document.createElement("div");
+        titleGenre.classList.add("genre-title");
+        titleGenre.innerHTML = genre;
+        newGenre.appendChild(titleGenre);
+        
+        const booksContainer = document.createElement("div");
+        booksContainer.classList.add("books");
+        
+        books.forEach(book => {
+            if (book.genreName === genre) {
+                const bookDiv = document.createElement("div");
+                bookDiv.classList.add("bookGenre");
+                
+                const title = document.createElement("div");
+                title.classList.add("book-title");
+                title.innerHTML = book.title;
+                bookDiv.appendChild(title);
+                
+                booksContainer.appendChild(bookDiv);
+            }
+        });
+
+        newGenre.appendChild(booksContainer);
+        generi.appendChild(newGenre);
+    });
+
+    // Initialize slick carousel
+    $('.books').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+        nextArrow: '<button type="button" class="slick-next">Next</button>',
+        autoplay: true,
+        autoplaySpeed: 2000, // Adjust speed as needed
+        cssEase: 'linear',
+        pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
 }
 
-function checkIfAlreadyGenre(libro){
-    for(let i = 0; i < findGenres.length; i++){
-        if(libro == findGenres[i]){
-            return true
-        }
+findGeneri();
+
+
+async function addNewBook() {
+    const selectedGenre = selectGenere.options[selectGenere.selectedIndex];
+    const selectedValue = selectedGenre.value;
+    const titleValue = inputTitle.value;
+
+    if (priceAdd.value === "") {
+        alert("Please choose a price for the book");
+        return;
+    }else if(priceAdd.value === "0"){
+        alert("Attento! hai inserito un libro gratuito")
+    }
+//#region 
+    if (titleValue.value === "") {
+        alert("The title of the book cannot be empty.");
+        return;
+    }else if(titleValue.value === "Tizi"){
+        alert("CUPARDO GAY!!!!!!!!")
     }
 
-    return false
+    if (selectedValue.value === "") {
+        alert("Please select a genre for the book.");
+        return;
+    }
+
+
+//#endregion
+
+    const post = {
+        id: idNumber,
+        title: titleValue,
+        price: parseInt(priceAdd.value),
+        isOut: true,
+        isbn: "asdasdasdasdasd",
+        genreId: selectedValue,
+        shelfId: 1,
+        genreName: "string"
+    };
+
+    try {
+        await createBook(post);
+        await loadBooks();
+        findGeneri()
+        priceRange.max = await findMaxPrice()
+        priceValue.innerHTML = await findMaxPrice()
+        idNumber++;
+        inputTitle.value = "";
+    } catch (error) {
+        console.error('Failed to create the book:', error);
+    }
 }
 
-async function displayGenres(findGenres){
-    let books = await getBooks()
 
-    findGenres.forEach(genre => {
-        console.log(genre)
-        const newGenre = document.createElement("div")
-        const titleGenre = document.createElement("h2")
-        titleGenre.innerHTML = genre
-        newGenre.appendChild(titleGenre)
-        const flexGenre = document.createElement("div")
-        flexGenre.classList.add("genere")
-        newGenre.appendChild(flexGenre)
-        for(let i = 0; i < books.length; i++){
-            if(books[i].genreName == genre){
-                const book = document.createElement("div")
-                book.classList.add("bookGenre")
-                const title = document.createElement("h3")
-                title.innerHTML = books[i].title
-                book.appendChild(title)
-                flexGenre.appendChild(book)
-            }
+async function findMaxPrice(){
+    const libri = await getBooks()
+
+    let maxPrice = libri[0].price
+
+    libri.forEach(libro => {
+        if(libro.price > maxPrice){
+            maxPrice = libro.price
         }
-        generi.appendChild(newGenre)
     })
-}
 
-findGeneri()
+    return maxPrice
+}
+document.querySelector('.settings-btn').addEventListener('click', function(){
+    document.getElementById("mySidebar").classList.toggle("open")
+});
+
+document.querySelectorAll('.aggiungi')[0].addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('aggiungi').scrollIntoView({ behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', function() {
+    console.log(this.window.scrollY)
+    const navbar = document.getElementsByTagName("header")[0];
+    if (this.window.scrollY > 800) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
