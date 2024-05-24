@@ -174,6 +174,12 @@ function createDivBook(dataTitle, dataId, dataPrice) {
     btnElimina.classList.add("btn");
     buttons.appendChild(btnElimina);
     const btnSegnala = document.createElement("button");
+    imgElimina.src = "../IMG/elimina.png";
+    imgSegnala.src = "../IMG/allert.png";
+    imgElimina.style.width = "100%";
+    imgElimina.style.height = "100%";
+    imgSegnala.style.width = "100%";
+    imgSegnala.style.height = "100%";
     btnElimina.appendChild(imgElimina)
     btnSegnala.appendChild(imgSegnala)
     btnSegnala.classList.add("btn");
@@ -322,83 +328,66 @@ function checkIfAlreadyFav(id){
 }
 
 const findGeneri = async () => {
-    generi.innerHTML = "";
-    let books = await getBooks();
-    let findGenres = [];
-    
+    generi.innerHTML = ""
+    let books = await getBooks()
     books.forEach(libro => {
-        if (!findGenres.includes(libro.genreName)) {
-            findGenres.push(libro.genreName);
+        if(findGenres.length == 0){
+            findGenres.push(libro.genreName)
+        }else{
+            if(checkIfAlreadyGenre(libro.genreName)){
+                console.log("")
+            }else{
+                findGenres.push(libro.genreName)
+            }
         }
-    });
-    
-    console.log(findGenres);
-    await displayGenres(findGenres);
-};
+    })
+    console.log(findGenres)
+    displayGenres(findGenres)
+}
+
+function checkIfAlreadyGenre(libro){
+    for(let i = 0; i < findGenres.length; i++){
+        if(libro == findGenres[i]){
+            return true
+        }
+    }
+    return false
+}
 
 async function displayGenres(findGenres) {
     let books = await getBooks();
     findGenres.forEach(genre => {
-        console.log(genre);
-        
         const newGenre = document.createElement("div");
-        newGenre.classList.add("genre");
-        
-        const titleGenre = document.createElement("div");
-        titleGenre.classList.add("genre-title");
+        newGenre.classList.add("genreBoxTop");
+        const titleGenre = document.createElement("h3");
         titleGenre.innerHTML = genre;
         newGenre.appendChild(titleGenre);
-        
-        const booksContainer = document.createElement("div");
-        booksContainer.classList.add("books");
-        
-        books.forEach(book => {
-            if (book.genreName === genre) {
-                const bookDiv = document.createElement("div");
-                bookDiv.classList.add("bookGenre");
-                
-                const title = document.createElement("div");
-                title.classList.add("book-title");
-                title.innerHTML = book.title;
-                bookDiv.appendChild(title);
-                
-                booksContainer.appendChild(bookDiv);
-            }
+        const carousel = document.createElement("div");
+        carousel.classList.add("carousel");
+        newGenre.appendChild(carousel);
+        let genreBooks = books.filter(book => book.genreName === genre);
+        genreBooks.forEach(book => {
+            const bookElement = document.createElement("div");
+            bookElement.classList.add("bookGenre");
+            const title = document.createElement("h4");
+            title.innerHTML = book.title;
+            bookElement.appendChild(title);
+            carousel.appendChild(bookElement);
         });
-
-        newGenre.appendChild(booksContainer);
         generi.appendChild(newGenre);
-    });
-
-    // Initialize slick carousel
-    $('.books').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-        nextArrow: '<button type="button" class="slick-next">Next</button>',
-        autoplay: true,
-        autoplaySpeed: 2000, // Adjust speed as needed
-        cssEase: 'linear',
-        pauseOnHover: true,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
+        $(carousel).slick({
+            infinite: true,
+            slidesToShow: Math.min(genreBooks.length, 2), // Adjust as needed
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000, // Adjust as needed
+            dots: true,
+            arrows: false
+        });
     });
 }
 
-findGeneri();
+findGeneri()
 
 
 async function addNewBook() {

@@ -95,38 +95,42 @@ header {
   border-radius: 50%;
 }
 .scritte-Libro{
+  font-size: 16px;
+  color: rgb(255, 255, 255);
   padding-left: 16px;
-  margin-top: 250px;
+  margin-top: 290px;
+  background-color: transparent;
 }
 
 .star-button {
-  border: none;
   height: 50px;
   width: 50px;
-  position: relative;
-  clip-path: polygon(
-      50% 0%,
-      61% 35%,
-      98% 35%,
-      68% 57%,
-      79% 91%,
-      50% 70%,
-      21% 91%,
-      32% 57%,
-      2% 35%,
-      39% 35%
-  );
   cursor: pointer;
-  display: inline-block;
   text-align: center;
-  line-height: 50px;
   margin-top: -20px;
-  margin-left: 50%;
-  padding-left: 35px;
-  border: 2px solid rgb(0, 0, 0);
+  border: none;
   background-color: rgb(241, 206, 99);
-  font-size: 18px;
-  border-radius: 7px;
+  background-image: url("../IMG/stella.png");
+  background-size: 85%; /* Riduci le dimensioni dell'immagine */
+  background-position: center center;
+  border-radius: 25px;
+  z-index: 3;
+  transition: box-shadow 1s ease;
+}
+.star-button:hover {
+  box-shadow: 0px 0px 7px 2px rgb(241, 206, 99); /* Modifica i valori per regolare l'ombra */
+  transition: box-shadow 1s ease;
+}
+.stella{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 50px;
+  height: 15px;
+  margin-top: -650px;
+  margin-left: 74%;
+  padding-left: 17px;
+  border-radius: 15px;
 }
 #btnSettingsDiv{
   margin-bottom: 17px;
@@ -225,35 +229,27 @@ header {
   margin: 10px;
 }
 .book{
-    width: 280px;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 19px;
-    border: solid rgba(255, 68, 0, 0.194) 2px;
-    border-radius: 1%;
+  background-image: url("../IMG/libro.jpg");
+  background-size: cover;
+  width: 280px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 19px;
+  border: solid rgba(255, 68, 0, 0.194) 2px;
+  border-radius: 1%;
+  transition: box-shadow 0.9s ease;
+  
+  border: solid orangered 2px;
 }
 .book:hover{
-  width: 282px;
-  height: 452px;
   border: solid orangered 2px;
   border-radius: 4px;
-
-
+  box-shadow: 0px 0px 9px 7px rgba(255, 68, 0, 0.17);
+  transition: box-shadow 0.9s ease;
 }
 
-.stella{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  width: 30px;
-  height: 15px;
-  margin-top: -630px;
-  margin-left: 70%;
-  padding-left: 17px;
-  border-radius: 15px;
-}
 .pref{
   background-color: yellow;
   width: 20px;
@@ -270,23 +266,29 @@ header {
   margin-left: 230px;
   flex-direction: column;
   gap: 10px;
+  background-color: transparent;
 }
 
 .btn{
   width: 35px; 
-  height: 70px;
+  height: 30px;
   border-radius: 50%; 
-  border: 1px solid rgb(0, 0, 0);
-  background-color:  rgb(249, 138, 28);
+  border:none;
   color: #ffffff;
+  background-color: transparent;
   font-size: 18px;
   margin-left: 6px;
+  transition-duration: 1s;
+  background-size: cover;
+  background-size: 80%; /* Riduci le dimensioni dell'immagine */
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .btn:hover{
-  background-color:  rgb(255, 128, 0);
-  border: 2px solid rgb(0, 0, 0);
+  background-size: 90%;
   font-size: 20px;
+  transition-duration: 1s;
 }
 
 #books{
@@ -463,7 +465,11 @@ header {
 }
 
 #reduceBooks{
-    width: 100px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: chocolate;
+    font-size: 20px;
 }
 
 .preferito{
@@ -474,52 +480,178 @@ header {
     margin: 20px;
 }
 
+/* Remove existing CSS for #generi */
+.genreBoxTop {
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid #696969;
+  border-radius: 5px;
+  width: calc(50% - 40px); /* Adjust as needed */
+  box-sizing: border-box;
+}
+
 #generi {
   display: flex;
-  flex-direction: column;
-  border-bottom: 2px solid #696969;
-  width: 98%;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.genre {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
+.boxGenre {
+  padding: 10px;
 }
 
-.genre-title {
-  border-top: 1px solid #696969;
-  border-bottom: 1px solid #696969;
-  padding: 5px 0;
-  width: 100%;
-  text-align: center;
+.boxGenre legend {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.books {
+.genere {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
 }
 
 .bookGenre {
-  width: 150px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-image: url("../IMG/libro.jpg");
+  background-size: cover;
+  width: 280px;
+  height: 450px; /* Increased height */
+  margin: 19px;
+  border: solid rgba(255, 68, 0, 0.194) 2px;
+  border-radius: 1%;
+  transition: box-shadow 0.9s ease;
+  position: relative;
 }
 
-.bookGenre img {
+/* Add a wrapper for the content */
+.bookContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+}
+
+/* Adjust the height of the image */
+.bookImage {
+  height: 80%; /* Adjust as needed */
+  background-image: url("../IMG/libro.jpg");
+  background-size: cover;
+}
+
+/* Move the title to the bottom */
+.bookTitle {
+  padding: 10px;
+  text-align: center; /* Center the title */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+}
+
+/* Add slick carousel CSS */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+
+.slick-slide img {
+  display: block;
   width: 100%;
   height: auto;
 }
 
-.book-title {
-  margin-top: 5px;
+.slick-dots {
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  list-style: none;
   text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  opacity: 1;
+}
+
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "•";
+  width: 20px;
+  height: 20px;
+  font-family: "slick";
+  font-size: 6px;
+  line-height: 20px;
+  text-align: center;
+  opacity: 0.25;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: black;
 }
 
 .slick-prev, .slick-next {
@@ -533,36 +665,6 @@ header {
     display: inline;
     padding-left: 20px;
     width: 300px;
-}
-
-.bookGenre{
-  margin: 30px;
-  width: 250px;
-  height: 350px;
-  border-radius: 30px;
-  border: 1px solid lightgray;
-}
-
-.bookGenre {
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: url("../IMG/background.png"); /* Add background image */
-  background-size: cover; /* Ensure the background covers the entire element */
-}
-
-.bookGenre img {
-  width: 100%;
-  height: auto;
-  opacity: 0.7; /* Add opacity to make the background image less dominant */
-}
-
-.book-title {
-  margin-top: 5px;
-  text-align: center;
-  position: relative; /* Add position relative to allow z-index */
-  z-index: 1; /* Ensure the text appears above the background image */
 }
 
 #searchInputs{
