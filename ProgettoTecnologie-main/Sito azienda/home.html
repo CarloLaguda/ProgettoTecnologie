@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Esplora</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <div id="btnNavigaDiv">
+                <a href="home.html" class="nav-link">HOME</a>
+                <div class="divisore"></div>
+                <a href="html/libreria.html" class="nav-link">LIBRERIA</a>
+            </div>
+            <div id="btnSettingsDiv">
+                <button class="settings-btn"></button>
+            </div>
+        </header>
+        <div id="mySidebar" class="sidebar">
+            <h3 style="font-size: 30px; font-weight: bold;">Info</h3>
+            <p>Ultimo aggiornamento: 22/05/24 </p>
+            <p>Versione: 1.3.6</p>
+            <p>Privacy: i valori di questa compagnia non prevedono alcun riguardo per la salvaguardia delle tue informazioni personali.</p>
+            <h3 style="font-size: 30px; font-weight: bold;">Segnala</h3>
+            <a href="#footer" style="font-size: 20px;" class="scroll-to-bottom">Bug</a>
+            <a href="#footer" style="font-size: 20px;" class="scroll-to-bottom">Contenuti inappropriati</a>
+        </div>
+        <div class="top">
+            <h1 class="esplora">ESPLORA</h1>
+            <p class="subtitle">Non limitarti al mediocre, scopri le meraviglie che ti aspettano.</p>
+            <a href="#" class="nav-link">VISITA LA NOSTRA LIBRERIA</a>
+        </div>
+        <div class="cambio-img">
+            <button class="b1" id="b1"></button>
+            <button class="b1" id="b2"></button>
+            <button class="b1" id="b3"></button>
+            <button class="b1" id="b4"></button>
+        </div>
+        <section class="intro">
+            <div class="content">
+                <h1 class="title">COSA TI OFFRIAMO?</h1>
+                <p class="additional-description">Benvenuto nella nostra libreria! Se sei qu&igrave; di passaggio non andartene, eccoti dei validi motivi per restare!</p>
+                <br>
+                <a href="#" class="link-aprezzaci">CLICCA SE SEI INTERESSATO</a>
+                <br>
+                <br>
+                <p>La nostra libreria è aperta a tutti coloro che vogliono scoprire la bellezza della lettura. Non preoccuparti se non ti piace leggere, si pu&oacute; sempre iniziare</p>
+            </div>
+            <div class="shelf-container">
+                <div class="books">
+                    <div class="book" id="book1">
+                        <span class="number">1</span>
+                        <span class="description"><h1>Numerosi Generi<h1></span><br><br><br><br>
+                        <span class="description">La nostra libreria dispone di libri per tutti i gusti!</span>
+                    </div>
+                    <div class="book" id="book2">
+                        <span class="number">2</span>
+                        <span class="description"><h1>Assistenza Clienti<h1></span><br><br><br><br>
+                        <span class="description">Il nostro team sar&aacute; molto disponibile e sempre pronto ad aiutarti!</span>
+                    </div>
+                    <div class="book" id="book3">
+                        <span class="number">3</span>
+                        <span class="description"><h1>Esperienza Fantastica<h1></span><br><br><br><br>
+                        <span class="description">Comprare libri da noi &eacute; un'esperienza unica e divertente.</span>
+                    </div>
+                    <div class="book" id="book4">
+                        <span class="number">4</span>
+                        <span class="description"><h1>Facilit&aacute; di utilizzo<h1></span><br><br><br><br>
+                        <span class="description">Vogliamo che comprare libri sia semplice e divertente!</span>
+                    </div>
+                </div>
+                <div class="shelf"></div>
+            </div>
+        </section>
+        <div class="scopri">
+            <main>
+                <ul class='slider'>
+                    <li class='item' style="background-image: url('https://images7.alphacoders.com/119/1193122.jpg')">
+                        <div class='content1'>
+                            <h2 class='title'>'LO HOBBIT'</h2>
+                            <p class='description1'> J.R.R. Tolkien racconta l'avventura di Bilbo Baggins, un hobbit della Contea, che si unisce a un gruppo di nani per recuperare un tesoro rubato dal drago Smaug. Guidati dal mago Gandalf, affrontano pericoli e creature magiche durante il viaggio verso la Montagna Solitaria. Bilbo scopre l'Anello, un oggetto magico cruciale per la Terra di Mezzo.</p>
+                            <button onclick='window.open("https://lotr.fandom.com/it/wiki/Lo_Hobbit")'>Read More</button>
+                        </div>
+                    </li>
+                    <li class='item' style="background-image: url('https://wallpaper.forfun.com/fetch/4e/4e16b9ae7bd4ddfd651460101dbfb8bf.jpeg?w=1470&r=0.5625')">
+                        <div class='content1'>
+                            <h2 class='title'>'Il Silmarillion'</h2>
+                            <p class='description1'>J.R.R. Tolkien narra la mitologia della Terra di Mezzo, dalla creazione del mondo fino agli eventi che precedono "Il Signore degli Anelli". Racconta la storia dei Silmaril, gemme create dall'elfo Fëanor, e delle guerre tra elfi, uomini e il malvagio Morgoth per il loro possesso. Include la caduta di Númenor e le vicende dei popoli della Terra di Mezzo. Il libro è una raccolta di leggende e miti che formano la base dell'universo tolkieniano.</p>
+                            <button onclick='window.open("https://lotr.fandom.com/wiki/The_Silmarillion#:~:text=The%20Silmarillion%20is%20a%20published,of%20the%20Kingdom%20of%20N%C3%BAmenor.")'>Read More</button>
+                        </div>
+                    </li>
+                    <li class='item' style="background-image: url('IMG/lotr.jpg')">
+                        <div class='content1'>
+                            <h2 class='title'>'Il Signore degli Anelli'</h2>
+                            <p class='description1'>J.R.R. Tolkien è un'epica trilogia che segue la missione di Frodo Baggins per distruggere l'Unico Anello, un artefatto malvagio creato dall'Oscuro Signore Sauron. Insieme alla Compagnia dell'Anello, composta da hobbit, un elfo, un nano, uomini e un mago, Frodo affronta grandi pericoli per salvare la Terra di Mezzo dalla distruzione. La storia esplora temi di amicizia, coraggio e sacrificio. Il viaggio culmina nella battaglia finale contro le forze di Sauron e la distruzione dell'anello. </p>
+                            <button onclick='window.open("https://lotr.fandom.com/it/wiki/Il_Signore_degli_Anelli")'>Read More</button>
+                        </div>
+                    </li>
+                    <li class='item' style="background-image: url('IMG/anelli.jpg')">
+                        <div class='content1'>
+                            <h2 class='title'>'GLI ANELLI DEL POTERE'</h2>
+                            <p class='description1'>Gli Anelli del Potere, creati nell'universo di J.R.R. Tolkien, sono venti anelli magici forgiati nella Seconda Era. Celebrimbor, un elfo fabbro, ne crea diciannove con l'inganno di Sauron, che segretamente forgia l'Unico Anello per controllarli tutti. Tre anelli vengono dati agli Elfi, sette ai Nani e nove agli Uomini. L'Unico Anello conferisce a Sauron un potere immenso, portando alla corruzione dei portatori e alla guerra per la sua distruzione. Questi anelli sono centrali nelle vicende della Terra di Mezzo, influenzando eventi e destini dei suoi abitanti.</p>
+                            <button onclick='window.open("https://lotr.fandom.com/it/wiki/Anelli_del_Potere#:~:text=Gli%20Anelli%20del%20Potere%20furono,popolo%20della%20Terra%20di%20Mezzo.")'>Read More</button>
+                        </div>
+                    </li>
+                    <li class='item' style="background-image: url('IMG/racconti.jpg')">
+                        <div class='content1'>
+                            <h2 class='title'>'I RACCONTI PERDUTI'</h2>
+                            <p class='description1'>J.R.R. Tolkien è una raccolta di storie che rappresentano le prime versioni dei miti e delle leggende della Terra di Mezzo. Questi racconti esplorano la creazione del mondo, la storia degli Elfi e delle prime ere, con molti elementi che saranno sviluppati in "Il Silmarillion". Il libro offre uno sguardo sulle origini delle idee di Tolkien e su come la sua mitologia si è evoluta nel tempo. Curato da suo figlio Christopher Tolkien, il volume è fondamentale per comprendere le radici del legendarium tolkieniano.</p>
+                            <button onclick='window.open("https://lotr.fandom.com/it/wiki/Racconti_Perduti")'>Read More</button>
+                        </div>
+                    </li>
+                    <li class='item' style="background-image: url('IMG/gondolin.jpg')">
+                        <div class='content1'>
+                            <h2 class='title'>'LA CADUTA DI GONDOLIN'</h2>
+                            <p class='description1'>J.R.R. Tolkien narra la storia della città elfica di Gondolin, nascosta e splendida, fondata da Turgon, re degli Elfi. La città viene tradita da Maeglin, un elfo corrotto da Morgoth, il Signore Oscuro. Morgoth lancia un attacco devastante con draghi, balrog e orchi, portando alla distruzione di Gondolin. Eärendil, uno dei pochi sopravvissuti, fugge portando speranza per il futuro. La storia è un racconto di eroismo, tradimento e resistenza contro il male.</p>
+                            <button onclick='window.open("https://lotr.fandom.com/it/wiki/Caduta_di_Gondolin#:~:text=La%20Caduta%20di%20Gondolin%2C%20conosciuta,cui%20lo%20stesso%20Re%20Turgon.")'>Read More</button>
+                        </div>
+                </li>
+                </ul>
+                <nav class='nav'>
+                    <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+                    <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+                </nav>
+            </main>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        </div>
+        <section class="minilib">
+            <div class="left-side">
+                <div class="titolo-minilib">
+                    <h1>ESPLORA IL NOSTRO CATALOGO</h1>
+                    <p>Il nostro catalogo &egrave; ricco di libri ogni gusto. Sia che tu stia cercando l'ultimo bestseller, un classico o qualcosa di diverso, qui lo troverai sicuro. Scopri il piacere della lettura con la nostra collezione e lasciati ispirare dalle storie che abbiamo scelto per te. Trova il tuo prossimo libro preferito da noi!</p>
+                    <br>
+                    <a href="html/libreria.html" class="link-aprezzaci">ESPLORA</a>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="scorri-libri">
+                </div>
+            </div>
+        </section>
+        <section class="about-us" id="about">
+            <div class="team">
+                <div class="member">
+                    <div class="image-container" id="member1">
+                        <img id ="Image_Marro" src="IMG/pika.jpg" width="105%">
+                        <a href="#" id="ToScocialMarro" target="_blank"><img src="IMG/twitch.png" alt="insta" id="socialPNGMarro" width="100%"></a>
+                    </div>
+                    <div class="info-container">
+                        <h4>Signor_Ghost</h4><br>
+                        <p>#TOPRISOTTO<br>
+                        Esecutore e INGENIERE di questo obrobrioso sito e gestore della manodopera sottopagata.
+                        </p>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="image-container" id="member2">
+                        <img id ="Image_Matta" src="IMG/blueSaturn.jpg" width="105%">
+                        <a href="#" id="ToScocialMatta" target="_blank"><img src="IMG/twitch.png" alt="insta" id="socialPNGMatta" width="100%"></a>
+                    </div>
+                    <div class="info-container">
+                        <h4>BlueSaturn</h4><br>
+                        <p>"Average JavaScript Enjoyer" #TOPRISOTTO<br>il coordinatore e pi&ugrave; importante sviluppatore di codice javascript nel lavoro</p>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="image-container" id="member3">
+                        <img id ="Image_Toci" src="IMG/tocImage.png" width="100%">
+                        <a href="#" id="ToScocialToci" target="_blank"><img src="IMG/insta.png" alt="insta" id="socialPNGToci" width="100%"></a>
+                    </div>
+                    <div class="info-container" id="text-container">
+                        <h4>QuckquackMF</h4><br>
+                        Non sapete fare una documentazione API, incompetenti<div id="tryhackme"></div>
+                        <p>[0x9] [0MN1]</p>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="image-container" id="member4">
+                        <img id ="Image_Carlo" src="IMG/carlox.png" width="105%">
+                        <a href="#" id="ToScocialCarlo" target="_blank"><img src="IMG/insta.png" alt="insta" id="socialPNGLaguda" width="100%"></a>
+                    </div>
+                    <div class="info-container">
+                        <h4>The_Carl1</h4></a><br>
+                        <p>Full stack developer da Trapani con furore. Vero capo ingegnere di questo sito #FreeCarlone</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chisiamo">
+                <h1>CHI SIAMO?</h1>
+                <img src="IMG/piccioneLogo.png" id="logo_piccioni" class="piccione" alt="piccione">
+                <h3 id="h3_piccioni"class="scritta_arancione">I PICCIONI PROGRAMMATORI</h3>
+                <p style="margin-top: -10px;">Ciao, siamo i Piccioni Programmatori, un quartetto esotico di appassionati di informatica che studia presso l'Istituto Luigi Galvani di Milano. La nostra passione pi&uacute; grande &eacute; proprio la materia che studiamo, e dedichiamo gran parte del nostro tempo a esplorare, imparare e sviluppare nuove competenze nel campo dell'informatica. </p>
+                <button id="tizi">TIZI</button>
+            </div>
+        </section>
+        <footer id="footer">
+            <div id="infoContactUs">
+                <h1>Contattaci</h1>
+                <p>Sentiti liberi di contattarci in qualsiasi momento per chiederci informazioni di ogni tipo. Il nostro team sar&aacute; sempre disponibile e risponder&aacute; in breve tempo ai tuoi messaggi!</p>
+                <br>
+                <h2>Riferiteci errori che potete riscontrare</h2>
+                <p>Voi utenti sarete anche una fonte di aiuto nei nostri confronti: non createvi probleimi nel scriverci per errori nei libri presenti nella libreria.</p>
+                <div class="social-buttons">
+                    <a href="https://open.spotify.com/playlist/2ECMOV8Fz6hfJOic3fJ8RB?si=6926efa1e21a4385" target="_blank" id="social-icon-spot">
+                        <img src="IMG/spotifyLogo.png" alt="spotify" width="100%">
+                    </a>
+                    <a href="https://github.com/CarloLaguda/ProgettoTecnologie" target="_blank" id="social-icon-git">
+                        <img src="IMG/githubLogo.png" alt="GitHub" width="100%">
+                    </a>
+                    <a href="https://discord.com" target="_blank" id="social-icon-dis">
+                        <img src="IMG/discordLogo.png" alt="Discord" width="100%">
+                    </a>
+                </div>
+            </div>
+            <div id="contactUs">
+                <label>Email</label><br>
+                <input type="email" placeholder="email" id="mailValue"><br /><br>
+                <label>Oggetto della mail</label><br>
+                <input type="text" placeholder="oggetto" id="oggettoValue"><br /><br>
+                <label>Messaggio</label><br>
+                <textarea type="text" placeholder="Dettagli del messaggio" class="input3" id="dettagliValue"></textarea><br/><br>
+                <div id="buttonsForm">
+                    <button class="btnForm" id="btn_invia">Invia</button>
+                    <button class="btnForm" id="Cancella_bozza">Cancella bozza</button>
+                </div>
+            </div>
+        </footer>
+        <center style="background-color: #222222; color: aliceblue;">&copy; Copyright 2024 piccioni programmatori</center>
+        <script src="home.js" type="module"></script>
+        <script src="mail-sending.js" type="module"></script>
+    </body>
+</html>

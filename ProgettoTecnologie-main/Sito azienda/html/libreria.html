@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/libreria.css" type="text/css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <title>La Libreria</title>
+</head>
+<body>
+    <header>
+        <div id="btnNavigaDiv">
+            <a href="../home.html" class="nav-link">HOME</a>
+        </div>
+        <div id="btnSettingsDiv">
+            <button class="settings-btn"></button>
+        </div>
+    </header>
+    <div id="mySidebar" class="sidebar">
+        <h3 style="font-size: 30px; font-weight: bold;">Info</h3>
+        <p>Ultimo aggiornamento: 22/05/24 </p>
+        <p>Versione: 1.3.6</p>
+        <p>Privacy: i valori di questa compagnia non prevedono alcun riguardo per la salvaguardia delle tue informazioni personali.</p>
+        <h3 style="font-size: 30px; font-weight: bold;">Segnala</h3>
+        <a href="#footer" style="font-size: 20px;" class="scroll-to-bottom">Bug</a>
+        <a href="#footer" style="font-size: 20px;" class="scroll-to-bottom">Contenuti inappropriati</a>
+    </div>
+    <div>
+        <div id="searchInputs">
+            <h1>CERCA NEL NOSTRO CATALOGO</h1>
+            <div class="rotondi">
+                <input type="text" id="searchInput" placeholder=" Search for books...">
+                <a href="#aggiungi"><button class="aggiungi" id="aggi">+</button></a>
+            </div>
+            
+            <div class="migiranlepalle">
+                <div id="price">
+                    <p>Price: </p>
+                    <input type="range" id="priceRange" min="0" max="100" value="100">
+                    <span id="priceValue">100</span>
+                </div>
+                <select id="genreSelect" class="este">
+                    <option value="" disabled selected>GENERE</option>
+                    <option>Tutti</option>
+                </select>
+                
+            </div>
+            <button id="revealSearch">---------<br>-----<br>--
+            </button>
+        </div>
+        <div class = "LibriShow">
+            <h2 class="titolo">DI UN OCCHIATA AL CATALOGO</h2>
+            <div id="main">
+                <div id="books">
+                </div>
+            </div>
+            <button id="reduceBooks">Riduci</button>
+        </div>
+        <div id = "general">
+            <div id="preferiti">
+                <h2>I tuoi preferiti</h2>
+                <div id="libriPreferiti">
+                </div>
+            </div>
+            <div id="generi">
+            </div>
+        </div>
+        <div class="aggiunta">
+            <div id="aggiungi">
+                <div id="element">
+                    <h3 class="color-white">Aggiungi libro</h3>
+                    <div id="inputs">
+                        <input type="text" placeholder="Titolo" id="title">
+                        <select id="selectGenere">
+                            <option>Tutti i Genere</option>
+                        </select>
+                    </div>
+                    <div id="sRow">
+                        <input type="text" placeholder="Prezzo, uando il punto" id="priceAdd">
+                        <button id="addBook">Aggiungi libro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+       <script src="../script/libri-generi.js" type="module"></script>
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    </footer>
+</body>
+</html>
