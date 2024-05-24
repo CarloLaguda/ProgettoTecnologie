@@ -486,6 +486,7 @@ header {
   padding: 10px;
   border: 2px solid #696969;
   border-radius: 5px;
+  height: 600px;
   width: calc(50% - 40px); /* Adjust as needed */
   box-sizing: border-box;
 }
@@ -514,7 +515,7 @@ header {
   background-image: url("../IMG/libro.jpg");
   background-size: cover;
   width: 280px;
-  height: 450px; /* Increased height */
+  height: 450px !important; /* Increased height */
   margin: 19px;
   border: solid rgba(255, 68, 0, 0.194) 2px;
   border-radius: 1%;
@@ -576,7 +577,6 @@ header {
 
 .slick-slide {
   float: left;
-  height: 100%;
   min-height: 1px;
   display: none;
 }

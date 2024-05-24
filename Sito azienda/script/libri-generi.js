@@ -436,6 +436,7 @@ async function addNewBook() {
         priceValue.innerHTML = await findMaxPrice()
         idNumber++;
         inputTitle.value = "";
+        priceAdd.value = "";
     } catch (error) {
         console.error('Failed to create the book:', error);
     }
